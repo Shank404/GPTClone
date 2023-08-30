@@ -22,3 +22,13 @@ training_list.sort()
 
 # Print all the unique characters in the training list
 # print("Characters: ", training_list)
+
+# Create a dictionary mapping from characters to integers
+characterToInteger = dict((character, integer)
+                          for integer, character in enumerate(training_list))
+# print("Character to integer:", characterToInteger)
+
+# Create a dictionary mapping from integers to characters
+integerToCharacters = dict((integer, character)
+                           for integer, character in enumerate(training_list))
+# print("Integers to characters:", integerToCharacters)
