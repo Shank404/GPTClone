@@ -1,4 +1,7 @@
 # Read training data
+from SimpleTokenizer import SimpleTokenizer
+
+
 with open("./data/input.txt", "r", encoding="utf-8") as textIOWrapper:
     text = textIOWrapper.read()
 
@@ -24,31 +27,22 @@ training_list.sort()
 # print("Characters: ", training_list)
 
 # Create a dictionary mapping from characters to integers
-characterToInteger = dict((character, integer)
-                          for integer, character in enumerate(training_list))
-# print("Character to integer:", characterToInteger)
+characterMapping = dict((character, integer)
+                        for integer, character in enumerate(training_list))
+# print("Character to integer:", characterMapping)
 
 # Create a dictionary mapping from integers to characters
-integerToCharacters = dict((integer, character)
-                           for integer, character in enumerate(training_list))
+integerMapping = dict((integer, character)
+                      for integer, character in enumerate(training_list))
 # print("Integers to characters:", integerToCharacters)
 
-# Create a list of integers from the given string
-
-
-def encode(values):
-    return [characterToInteger[key]
-            for key in values]
-
+# Initialize tokenizer
+simpleTokenizer = SimpleTokenizer()
 
 # Print encoded example string
-# print(encode("hii meine kerle"))
-
-
-def decode(values):
-    return ''.join([integerToCharacters[key]
-                    for key in values])
-
+# encoded_example = simpleTokenizer.encode(characterMapping, "hii meine kerle")
+# print(encoded_example)
 
 # Print decoded example string
-# print(decode(encode("hii meine kerle")))
+# decoded_example = simpleTokenizer.decode(integerMapping, encoded_example)
+# print(decoded_example)
