@@ -32,3 +32,23 @@ characterToInteger = dict((character, integer)
 integerToCharacters = dict((integer, character)
                            for integer, character in enumerate(training_list))
 # print("Integers to characters:", integerToCharacters)
+
+# Create a list of integers from the given string
+
+
+def encode(values):
+    return [characterToInteger[key]
+            for key in values]
+
+
+# Print encoded example string
+# print(encode("hii meine kerle"))
+
+
+def decode(values):
+    return ''.join([integerToCharacters[key]
+                    for key in values])
+
+
+# Print decoded example string
+# print(decode(encode("hii meine kerle")))
